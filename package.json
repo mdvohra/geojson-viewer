@@ -2,11 +2,19 @@
   "name": "geojson-viewer",
   "displayName": "GeoJSON Viewer",
   "description": "View GeoJSON files as interactive maps and data tables",
-  "version": "0.0.1",
+  "publisher": "mohammadvohra",
+  "icon": "logo_vs.png",
+  "version": "0.0.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdvohra/geojson-viewer"
+  },
+  "keywords": ["geojson", "map", "gis", "leaflet", "viewer"],
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Other"],
+  "categories": ["Other", "Visualization"],
   "activationEvents": [
     "onLanguage:json",
     "onCustomEditor:geojsonViewer.editor"
@@ -45,9 +53,12 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "echo 'ready'"
+    "vscode:prepublish": "echo ready",
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0"
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.2"
   }
 }

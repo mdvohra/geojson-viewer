@@ -4,7 +4,9 @@ View any `.geojson` file as an **interactive map + data table** — directly ins
 
 ---
 ![Project Banner](assets/image.png)
+![Project Banner](assets/image3.png)
 ![Project Banner](assets/image2.png)
+
 
 ## Features
 
@@ -32,18 +34,30 @@ View any `.geojson` file as an **interactive map + data table** — directly ins
 
 ### Option B — Install as VSIX (share with others)
 
-1. Install the packaging tool:
-   ```bash
-   npm install -g @vscode/vsce
-   ```
-2. Package it:
+1. From the project folder, install dependencies and build the VSIX:
    ```bash
    cd geojson-viewer
-   vsce package
+   npm install
+   npm run package
    ```
-3. This creates a `geojson-viewer-0.0.1.vsix` file
-4. Install it in VS Code:
-   - Open VS Code → Extensions sidebar → `...` menu → **Install from VSIX…**
+   (This uses `@vscode/vsce` from `devDependencies`.)
+2. This creates `geojson-viewer-0.0.1.vsix` in the project root.
+3. In VS Code: Extensions sidebar → `...` → **Install from VSIX…**
+
+### Option C — Publish to the Visual Studio Marketplace
+
+1. **Create a publisher** (if you do not have one): sign in at [Visual Studio Marketplace — manage publishers](https://marketplace.visualstudio.com/manage) and create a publisher. Its **ID** must match `"publisher"` in `package.json` (currently `mohammadvohra`).
+2. **Personal Access Token (PAT)**:
+   - Go to [Azure DevOps](https://dev.azure.com) → **User settings** → **Personal access tokens**.
+   - Create a token with scope **Marketplace → Manage**.
+3. **Log in and publish** from the project folder:
+   ```bash
+   npm install
+   npx vsce login mohammadvohra
+   npm run publish
+   ```
+   Or: `npx vsce publish -p <YOUR_PAT>` (non-interactive).
+4. After upload, the listing appears on the Marketplace (and in VS Code search) within a few minutes. Bump `"version"` in `package.json` for each new release.
 
 ---
 
@@ -78,7 +92,9 @@ No build step, no webpack — just plain JS.
 geojson-viewer/
 ├── src/
 │   └── extension.js      ← main extension logic + webview HTML
-├── package.json           ← VS Code extension manifest
+├── assets/               ← README screenshots
+├── package.json          ← VS Code extension manifest
+├── LICENSE
 └── README.md
 ```
 
