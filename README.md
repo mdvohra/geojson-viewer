@@ -3,6 +3,8 @@
 View any `.geojson` file as an **interactive map + data table** — directly inside VS Code.
 
 ---
+![Project Banner](assets/image.png)
+![Project Banner](assets/image2.png)
 
 ## Features
 
