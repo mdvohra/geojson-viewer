@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [72.8777, 19.0760] },
+      "properties": { "name": "Mumbai", "country": "India", "population": 20667656, "type": "City" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.2090, 28.6139] },
+      "properties": { "name": "New Delhi", "country": "India", "population": 32941000, "type": "Capital" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [80.2707, 13.0827] },
+      "properties": { "name": "Chennai", "country": "India", "population": 10971108, "type": "City" }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [68.1, 23.0], [97.4, 23.0], [97.4, 8.0], [68.1, 8.0], [68.1, 23.0]
+        ]]
+      },
+      "properties": { "name": "Southern India Region", "area_km2": 635780, "type": "Region" }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [72.8777, 19.0760], [77.2090, 28.6139], [88.3639, 22.5726]
+        ]
+      },
+      "properties": { "name": "Mumbai–Delhi–Kolkata Route", "distance_km": 1950, "type": "Route" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [88.3639, 22.5726] },
+      "properties": { "name": "Kolkata", "country": "India", "population": 14850000, "type": "City" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.5946, 12.9716] },
+      "properties": { "name": "Bengaluru", "country": "India", "population": 13193000, "type": "City" }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "geojson-viewer",
+  "displayName": "GeoJSON Viewer",
+  "description": "View GeoJSON files as interactive maps and data tables",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onLanguage:json",
+    "onCustomEditor:geojsonViewer.editor"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "geojsonViewer.open",
+        "title": "Open in GeoJSON Viewer",
+        "icon": "$(map)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "geojsonViewer.open",
+          "when": "resourceExtname == .geojson || (resourceExtname == .json && editorLangId == json)",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "geojsonViewer.open",
+          "when": "resourceExtname == .geojson",
+          "group": "navigation"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "geojson",
+        "extensions": [".geojson"],
+        "aliases": ["GeoJSON", "geojson"]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "echo 'ready'"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0"
+  }
+}
